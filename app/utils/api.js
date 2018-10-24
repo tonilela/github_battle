@@ -1,12 +1,14 @@
-var axios = require('axios')
+const axios = require('axios')
+
+function fetchePopularRepos (lang) {
+  const encodedURI = window.encodeURI(`https://api.github.com/search/repositories?q=stars:>3+language:${lang}'&sort=stars&order=desc&type=Repositories`)
+
+  return axios.get(encodedURI)
+    .then((resp) => {
+      return resp.data.items
+    })
+}
 
 module.exports = {
-  fetchePopularRepos: function(lang){  
-    var encodedURI =  window.encodeURI('https://api.github.com/search/repositories?q=stars:>3+language:'+ lang + '&sort=stars&order=desc&type=Repositories');
-
-    return axios.get(encodedURI)
-      .then(function(resp){
-          return resp.data.items
-      })
-  }
+  fetchePopularRepos: fetchePopularRepos
 }

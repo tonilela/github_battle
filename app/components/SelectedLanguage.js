@@ -1,27 +1,29 @@
 import React from 'react'
-import PropTypes from 'prop-types' 
+import PropTypes from 'prop-types'
 
-const SelectedLanguage = ({handleClick, selectedLang})=>{
-  const lang = ['all','JavaScript','c#','c++','Go','Node']
-  return(
+const SelectedLanguage = ({ handleClick, selectedLang }) => {
+  const lang = ['all', 'JavaScript', 'c#', 'c++', 'Go', 'Node']
+
+  return (
     <ul className='lang'>
-      {lang.map((lang) => {
+      {lang.map((language) => {
         return (
-          <li 
-            style={lang === selectedLang ? {color: 'red'}:null}
-            onClick={handleClick.bind(null,lang)} 
-            key={lang}>
-              {lang}
+          <li
+            style={language === selectedLang ? { color: 'red' } : null}
+            onClick={handleClick.bind(null, lang)}
+            key={language}
+          >
+            {language}
           </li>
-          )
+        )
       })}
-    </ul>  
+    </ul>
   )
 }
 
 SelectedLanguage.propTypes = {
-   handleClick: PropTypes.func.isRequired,
-   selectedLang: PropTypes.string.isRequired
-  }
+  handleClick: PropTypes.func.isRequired,
+  selectedLang: PropTypes.string.isRequired
+}
 
 export default SelectedLanguage
