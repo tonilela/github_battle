@@ -9,14 +9,39 @@
   cursor: pointer;
 }
 
+li {
+  list-style-type: none
+}
+
 .popular {
   font-size: 25px;
+}
+
+.popular-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 ul {
   padding: 0;
 }
 
-li {
-  list-style-type: none
+.space-list{
+  margin-bottom: 7 px
+}
+
+.avatar {
+  width: 150 px !important;
+  border-radius: 50px;
+}
+
+.popular-item {
+  margin: 20px;
+  text-align: center;
+}
+
+.popular-rank {
+  font-size: 20px;
+  margin: 10px;
 }
